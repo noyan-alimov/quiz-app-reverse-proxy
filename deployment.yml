@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: reverse-proxy
-  name: reverse-proxy
+    service: quiz-app-reverse-proxy
+  name: quiz-app-reverse-proxy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: reverse-proxy
+      service: quiz-app-reverse-proxy
   template:
     metadata:
       labels:
-        service: reverse-proxy
+        service: quiz-app-reverse-proxy
     spec:
       containers:
-        - image: noyan09/reverse-proxy
-          name: reverse-proxy
+        - image: noyan09/quiz-app-reverse-proxy
+          name: quiz-app-reverse-proxy
           imagePullPolicy: Always
           resources:
             requests:
